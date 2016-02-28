@@ -57,23 +57,18 @@
 $views-map: sprite-map('icons/views/*.png', $spacing: 70px);
 $items: rows, grids, lines;
 
-// @each $item in $items {
-// 	.sort__view_#{$item} {
-// 		.sort__view-icon {
-// 			@include get-sprite($views-map, $item);
-// 		}
+@each $item in $items {
+	.sort__view-#{$item} {
+		.sort__view-icon {
+			@include get-sprite($views-map, $item);
+		}
 
-// 		// &:hover {
-// 		// 	$hover-icon: $item + '-hover';
+		&:hover {
+			$hover-icon: $item + '-hover';
 
-// 		// 	.sort__view-icon {
-// 		// 	@include get-sprite($views-map, $hover-icon);
-// 		// }
-// 		// }
-// 	}
-// }
-.sort__view_lines {
-	.sort__view-icon {
-		@include get-sprite($views-map, lines);
+			.sort__view-icon {
+			@include get-sprite($views-map, $hover-icon);
+		}
+		}
 	}
 }
