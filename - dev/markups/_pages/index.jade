@@ -1,0 +1,106 @@
+extends ../main
+
+block title
+	| Мобильные телефоны
+
+block content
+	article.content-wrapper
+		.container
+			.main-title
+				| Мобильные телефоны
+			.main-content
+
+				include ../_common/_sidebar
+
+				.content
+					.sort
+						.sort__left
+								.sort__select--wrap
+									.sort__title Сортироавать по
+									.sort__select
+										select.sort__select-elem
+											- var options = ["по цене", "по популярности"]
+											each option in options
+													option(value="")= option
+						.sort__right
+							.sort__title Вид каталога
+							.sort__view 
+								ul.sort__view-list
+									- var items = ['rows', 'grids', 'line']
+									each item in items
+										li(class="sort__view-item sort__view-" + item data-view= item)
+											a(href="#").sort__view-link
+												.sort__view-icon
+
+					.products
+						ul.products__list#products__list
+							- for (var i = 0; i<9; i++)
+								li.products__item
+									.products__item-inner
+										.products__left
+											.products__slideshow
+												.products__slideshow-block
+													a(href="#").products__slideshow-display
+														img(src="img/mobile/1.png" alt="").products__slideshow-img
+													ul.products__slideshow-thumbs
+															li.products__slideshow-item
+																a(href="#").products__slideshow-link
+																	img(src="img/mobile/1-1.png"  alt="").products__slideshow-thumbs-img
+															li.products__slideshow-item
+																a(href="#").products__slideshow-link
+																	img(src="img/mobile/1-2.png"  alt="").products__slideshow-thumbs-img
+															li.products__slideshow-item
+																a(href="#").products__slideshow-link
+																	img(src="img/mobile/1-3.png"  alt="").products__slideshow-thumbs-img
+												.products__article
+													.products__article-word Артикул
+													.products__article-num 1987565
+											.products__desc
+												.products__desc-title Sansung GT-L9301I GALAXY S3
+												ul.products__desc-options
+													- var options = {"Тип sim-карты": "Micro-sim", "Количество Sim-карт": "1", "Цвет": "Белый", "ОС": "Android", "Связь 3G": "Есть", "4G(LTE)" : "Нет", "GPS модуль": "Есть"}
+													- var index =0;
+													- for (item in options)
+														li(class="products__options-item" + ( !(index++ % 2) ? ' products__options-item_color' : '') )
+															.products__options-key= item
+															.products__options-value= options[item]
+												div(class="products__rating" data-rating="3")
+													ul.products__rating-stars
+														li.products__rating-stars-item.products__rating-stars-item_filled
+														li.products__rating-stars-item.products__rating-stars-item_filled
+														li.products__rating-stars-item.products__rating-stars-item_filled
+														li.products__rating-stars-item.products__rating-stars-item_filled
+														li.products__rating-stars-item
+													.products__rating-amount 3
+										.products__right
+											.products__info
+												.products__price 11290
+													i.rub
+											.products__info-bottom
+												a(href="#").products__buy-btn В корзину
+												.products__avialiable В наличии
+					.pagination
+						ul.pagination__list
+							li.pagination__item.pagination__item_prev
+								a(href="#").pagination__link
+									.pagination__mark
+							- for (var i = 1; i < 4; i++) 
+								li.pagination__item
+									a(href="#").pagination__link
+										.pagination__mark= i
+							li.pagination__item.pagination__item_next
+								a(href="#").pagination__link
+									.pagination__mark
+
+																		
+
+			.achtung
+				.main-title  Важная информация
+					
+				.achtung__text
+					p  Повседневная практика показывает, что сложившаяся структура организации влечет за собой процесс внедрения и модернизации позиций, занимаемых участниками в отношении поставленных задач. Значимость этих проблем настолько очевидна, что реализация намеченных плановых заданий в значительной степени обуславливает создание модели развития. Таким образом консультация с широким активом представляет собой интересный эксперимент проверки модели развития.
+					p  Идейные соображения высшего порядка, а также рамки и место обучения кадров позволяет оценить значение позиций, занимаемых участниками в отношении поставленных задач. Таким образом сложившаяся структура организации требуют определения и уточнения направлений прогрессивного развития. Равным образом консультация с широким активом влечет за собой процесс внедрения и модернизации соответствующий условий активизации.
+					p  Идейные соображения высшего порядка, а также начало повседневной работы по формированию позиции позволяет оценить значение соответствующий условий активизации. С другой стороны сложившаяся структура организации позволяет оценить значение системы обучения кадров, соответствует насущным потребностям.
+					p  Повседневная практика показывает, что сложившаяся структура организации влечет за собой процесс внедрения и модернизации позиций, занимаемых участниками в отношении поставленных задач. Значимость этих проблем настолько очевидна, что реализация намеченных плановых заданий в значительной степени обуславливает создание модели развития. Таким образом консультация с широким активом представляет собой интересный эксперимент проверки модели развития.
+					p  Идейные соображения высшего порядка, а также рамки и место обучения кадров позволяет оценить значение позиций, занимаемых участниками в отношении поставленных задач. Таким образом сложившаяся структура организации требуют определения и уточнения направлений прогрессивного развития. Равным образом консультация с широким активом влечет за собой процесс внедрения и модернизации соответствующий условий активизации.
+					p  Идейные соображения высшего порядка, а также начало повседневной работы по формированию позиции позволяет оценить значение соответствующий условий активизации. С другой стороны сложившаяся структура организации позволяет оценить значение системы обучения кадров, соответствует насущным потребностям.

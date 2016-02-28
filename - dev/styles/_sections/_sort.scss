@@ -1,0 +1,79 @@
+.sort {
+	background: #e4ebee;
+	@include clearfix;
+	border: 1px solid $grey;
+	@include border-radius(5px);
+	margin-bottom: 21px;
+}
+.sort__title{
+	font-size: 14px;
+	line-height: 16px;
+	color: #5d656c;
+	@include inlineblock(middle);
+	margin-right: 12px;
+}
+.sort__select{
+	@include inlineblock(middle);
+}
+.sort__left{
+	float: left;
+	width: 45%;
+	/**/
+	padding-left: 23px;
+	padding-top: 13px;
+	//border: 1px solid red;
+	/**/
+}
+.sort__right{
+	float: right;
+	width: 45%;
+	text-align: right;
+	/**/
+	//border: 1px solid red;
+}
+
+.sort__view {
+	@include inlineblock(middle);
+}
+.sort__view-list {
+	@include clearfix;
+}
+.sort__view-item {
+	float: left;
+	border-left: 1px solid $grey;
+}
+.sort__view-link{
+	width: 50px;
+	height: 50px;
+	display: block;
+	position: relative;	
+	outline: none !important;
+}
+.sort__view-icon{
+	@include absolute-center;
+}
+
+
+$views-map: sprite-map('icons/views/*.png', $spacing: 70px);
+$items: rows, grids, lines;
+
+// @each $item in $items {
+// 	.sort__view_#{$item} {
+// 		.sort__view-icon {
+// 			@include get-sprite($views-map, $item);
+// 		}
+
+// 		// &:hover {
+// 		// 	$hover-icon: $item + '-hover';
+
+// 		// 	.sort__view-icon {
+// 		// 	@include get-sprite($views-map, $hover-icon);
+// 		// }
+// 		// }
+// 	}
+// }
+.sort__view_lines {
+	.sort__view-icon {
+		@include get-sprite($views-map, lines);
+	}
+}
