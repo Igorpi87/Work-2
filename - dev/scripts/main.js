@@ -1,6 +1,8 @@
+
+// slider
 var sliderWidget = (function(){
 
-	var _insertValues = function (){
+	var _insertValues = function ($this){
 		var from = $this.closest('.filter__slider').find('.filter__slider-input_from'),
 			to = $this.closest('.filter__slider').find('.filter__slider-input_to');
 		var values = $this.slider('option', 'values');	
@@ -23,10 +25,10 @@ var sliderWidget = (function(){
 				    max: max,
 				    values: [ min, max ],
 				    slide: function() {
-				     	//_insertValues($this);
+				     	_insertValues($this);
 			    	},
 			    	create: function() {
-			    		//_insertValues($this);
+			    		_insertValues($this);
 			    	}
 		  	    });
 			    // $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
@@ -38,7 +40,7 @@ var sliderWidget = (function(){
 	}
 }());
 
-
+// functions for change view (lines, grid, rows);
  var ViewChange = (function(){
 
     var _previousClass = '';
@@ -71,11 +73,22 @@ var sliderWidget = (function(){
 }());
 
 
+//reset button for chekboxes
+var resetBtn = (function(){
+
+    $('.filter__reset').on('click', function(e) {
+        e.preventDefault();
+        $('input[type=checkbox]').attr('checked', false);
+    });
+
+	
+
+}());
 
 $(document).ready(function(){
 
 	ViewChange.init();
-
+    $('.achtung__text').columnize({ columns: 2 });
 	if($('.filter__slider-element').length) {
 		sliderWidget.init();
 	}

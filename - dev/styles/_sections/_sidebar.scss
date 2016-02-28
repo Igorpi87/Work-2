@@ -65,6 +65,20 @@
 	@include open-sans(semibold);
 	margin-bottom: 18px;
 	text-decoration: none;
+	width: 290px;
+	display: block;
+	position: relative;
+}
+$arr-map : sprite-map('icons/_misc/*.png', $spacing: 70px);
+
+.acco-trigger {
+	display: block;
+	width: 18px;
+	height: 11px;
+	position: absolute;
+	right: 0;
+	top: 3px;
+	@include get-sprite($arr-map, arr2);
 }
 .filter__choose{
 	margin-bottom: 13px;
