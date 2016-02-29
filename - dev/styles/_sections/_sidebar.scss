@@ -42,7 +42,7 @@
 .filter__item {
 	padding: 12px 26px;
 	border-top: 1px solid $grey;
-
+	background-color: #ffffff;
 	&:first-child{
 		border-top: 0 none;
 	}
@@ -68,6 +68,14 @@
 	width: 290px;
 	display: block;
 	position: relative;
+	outline-style: none;
+
+	&:hover {
+		outline-style: none;
+	}
+	&:focus {
+		outline-style: none;
+	}
 }
 $arr-map : sprite-map('icons/_misc/*.png', $spacing: 70px);
 
